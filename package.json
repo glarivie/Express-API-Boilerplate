@@ -1,0 +1,74 @@
+{
+  "name": "express-nodemon-babel-starting-boilerplate",
+  "version": "1.0.0",
+  "description": "Starting point for a new Nodejs Restful Api",
+  "main": "index.js",
+  "private": false,
+  "engines": {
+    "node": ">=5",
+    "npm": ">=3"
+  },
+  "scripts": {
+    "start": "NODE_ENV=production npm run start-prod",
+    "start-prod": "node ./build/index.js",
+    "clean": "rm -rf build && mkdir build",
+    "build-server": "babel -d ./build ./src -s",
+    "build": "npm run clean && npm run build-server",
+    "dev": "NODE_ENV=development nodemon --exec 'npm run lint && babel-node ./src/index.js' | bunyan",
+    "debug": "NODE_ENV=development nodemon --exec 'npm run lint && npm run build && node --debug ./build/index.js'",
+    "lint": "eslint -c .eslintrc src",
+    "force": "kill -9 $(lsof -i tcp:7777 | sed -n 2p | awk -F ' ' '{print $2}')"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hqro/Express-Nodemon-Babel-ES6-ES7-Restful-Api-Boilerplate.git"
+  },
+  "keywords": [
+    "nodemon",
+    "express",
+    "babel",
+    "es6",
+    "es7"
+  ],
+  "author": "Guillaume L. <glarivie@student.42.fr>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hqro/Express-Nodemon-Babel-ES6-ES7-Restful-Api-Boilerplate/issues"
+  },
+  "homepage": "https://github.com/hqro/Express-Nodemon-Babel-ES6-ES7-Restful-Api-Boilerplate#readme",
+  "dependencies": {
+    "babel-polyfill": "^6.9.1",
+    "babel-runtime": "^6.11.6",
+    "better-npm-run": "0.0.10",
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.7.1",
+    "express": "^4.14.0",
+    "is_js": "^0.8.0",
+    "joi": "^9.0.4",
+    "lodash": "^4.14.1",
+    "mongoose": "^4.5.7",
+    "mongoose-gen": "^2.1.1",
+    "mongoose-paginate": "^5.0.0",
+    "query-string": "^4.2.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-core": "^6.11.4",
+    "babel-eslint": "^6.1.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-runtime": "^6.12.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-1": "^6.5.0",
+    "bunyan": "^1.8.1",
+    "colors": "^1.1.2",
+    "eslint": "^3.2.0",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.12.0",
+    "morgan": "^1.7.0",
+    "nodemon": "^1.10.0"
+  },
+  "optionalDependencies": {
+    "fsevents": "1.0.14"
+  }
+}
