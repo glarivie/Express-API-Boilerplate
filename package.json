@@ -1,6 +1,6 @@
 {
   "name": "express-nodemon-babel-starting-boilerplate",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Starting point for a new Nodejs Restful Api",
   "main": "index.js",
   "private": false,
