@@ -3,6 +3,7 @@ import express from 'express';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
+import router from '../routes/main';
 
 const app = express();
 
@@ -18,7 +19,7 @@ app.use(cors());
 app.disable('x-powered-by');
 
 // Routes
-app.use('/', require('../routes/main.js'));
+app.use('/', router);
 
 // Error handler
 /* eslint-disable no-console */
