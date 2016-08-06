@@ -37,10 +37,6 @@
 
   "parser": "babel-eslint",
 
-  "plugins": [
-    "import"
-  ],
-
   "rules": {
     ////////// Possible Errors //////////
 

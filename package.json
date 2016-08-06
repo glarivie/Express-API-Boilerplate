@@ -43,6 +43,7 @@
     "express": "^4.14.0",
     "is_js": "^0.8.0",
     "joi": "^9.0.4",
+    "kerberos": "0.0.21",
     "lodash": "^4.14.1",
     "mongoose": "^4.5.7",
     "mongoose-gen": "^2.1.1",
@@ -59,12 +60,11 @@
     "bunyan": "^1.8.1",
     "colors": "^1.1.2",
     "eslint": "^3.2.0",
-    "eslint-config-airbnb": "^9.0.1",
-    "eslint-plugin-import": "^1.12.0",
     "morgan": "^1.7.0",
     "nodemon": "^1.10.0"
   },
   "optionalDependencies": {
-    "fsevents": "1.0.14"
+    "fsevents": "1.0.14",
+    "kerberos": "0.0.21"
   }
 }
