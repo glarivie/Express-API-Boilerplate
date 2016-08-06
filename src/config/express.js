@@ -4,6 +4,7 @@ import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import router from '../routes/main';
+import 'colors';
 
 const app = express();
 
@@ -30,7 +31,7 @@ app.use((error, req, res, next) => {
 });
 
 app.listen(7777, () => {
-  console.log('App listening at http://localhost:7777');
+  console.log('[Express] Api is running on port 7777');
 });
 /* eslint-enable no-console */
 
