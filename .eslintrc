@@ -19,7 +19,7 @@
     "regexYFlag": true,                        // enable the regular expression y flag
     "templateStrings": true,                   // enable template strings
     "unicodeCodePointEscapes": true,           // enable code point escapes
-    "jsx": false                                // enable JSX
+    "jsx": false                               // enable JSX
   },
 
   "env": {
@@ -35,6 +35,7 @@
     "shelljs": false,     // shelljs global variables.
   },
 
+  "etends": "airbnb-base",
   "parser": "babel-eslint",
 
   "rules": {
