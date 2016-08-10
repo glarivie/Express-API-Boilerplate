@@ -6,6 +6,8 @@ import bodyParser from 'body-parser';
 import router from '../routes/main';
 import 'colors';
 
+require('dotenv').config();
+
 const app = express();
 
 app.use(morgan('dev'));
@@ -30,8 +32,8 @@ app.use((error, req, res, next) => {
   return res.status(500).send(error.message);
 });
 
-app.listen(7777, () => {
-  console.log('[Express] Api is running on port 7777');
+app.listen(process.env.SERVER_PORT, () => {
+  console.log(`[Express] Api is running on ${process.env.SERVER_PORT}`);
 });
 /* eslint-enable no-console */
 
