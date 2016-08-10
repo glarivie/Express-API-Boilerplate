@@ -4,7 +4,6 @@ import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import router from '../routes/main';
-import 'colors';
 
 require('dotenv').config();
 
