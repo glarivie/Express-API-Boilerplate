@@ -9,12 +9,12 @@
     "npm": ">=3"
   },
   "scripts": {
-    "start": "NODE_ENV=production npm run start-prod",
-    "start-prod": "node ./build/index.js",
+    "start-prod": "NODE_ENV=production npm run prod",
+    "prod": "node ./build/index.js",
     "clean": "rm -rf build && mkdir build",
     "build-server": "babel -d ./build ./src -s",
     "build": "npm run clean && npm run build-server",
-    "dev": "NODE_ENV=development nodemon --exec 'npm run lint && babel-node ./src/index.js' | bunyan",
+    "start": "NODE_ENV=development nodemon --exec 'npm run lint && babel-node ./src/index.js' | bunyan",
     "debug": "NODE_ENV=development nodemon --exec 'npm run lint && npm run build && node --debug ./build/index.js'",
     "lint": "eslint -c .eslintrc src",
     "force": "kill -9 $(lsof -i tcp:7777 | sed -n 2p | awk -F ' ' '{print $2}')"
