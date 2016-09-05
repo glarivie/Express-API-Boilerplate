@@ -1,8 +1,6 @@
 import mongoose from 'mongoose';
 import paginate from 'mongoose-paginate';
 
-require('dotenv').config();
-
 mongoose.Promise = global.Promise;
 
 import demoSchema from '../schemas/demoSchema';
