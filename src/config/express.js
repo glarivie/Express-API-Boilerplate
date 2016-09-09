@@ -19,6 +19,9 @@ app.use(cors());
 // disable 'X-Powered-By' header in response
 app.disable('x-powered-by');
 
+// Remove No Cache Control
+app.disable('etag');
+
 // Routes
 app.use('/', router);
 
