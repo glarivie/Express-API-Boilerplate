@@ -1,6 +1,6 @@
 {
   "name": "express-nodemon-babel-starting-boilerplate",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "Starting point for a new Nodejs Restful Api",
   "main": "index.js",
   "private": false,
@@ -14,10 +14,10 @@
     "clean": "rm -rf build && mkdir build",
     "build-server": "babel -d ./build ./src -s",
     "build": "npm run clean && npm run build-server",
-    "start": "NODE_ENV=development nodemon --exec 'npm run lint && babel-node ./src/index.js' | bunyan",
+    "start": "NODE_ENV=development nodemon --exec 'babel-node ./src/index.js' | bunyan",
     "debug": "NODE_ENV=development nodemon --exec 'npm run lint && npm run build && node --debug ./build/index.js'",
     "lint": "eslint -c .eslintrc src",
-    "force": "kill -9 $(lsof -i tcp:7777 | sed -n 2p | awk -F ' ' '{print $2}')"
+    "force": "kill -9 $(lsof -i tcp:6789 | sed -n 2p | awk -F ' ' '{print $2}')"
   },
   "repository": {
     "type": "git",
@@ -51,12 +51,10 @@
     "query-string": "^4.2.2"
   },
   "devDependencies": {
-    "babel-cli": "^6.11.4",
+    "babel-cli": "^6.18.0",
     "babel-core": "^6.11.4",
     "babel-eslint": "^6.1.2",
-    "babel-plugin-transform-class-properties": "^6.11.5",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.11.5",
-    "babel-preset-stage-2": "^6.11.0",
+    "babel-preset-latest": "^6.16.0",
     "bunyan": "^1.8.1",
     "eslint": "^3.2.2",
     "eslint-config-airbnb-base": "^5.0.1",
@@ -65,7 +63,6 @@
     "nodemon": "^1.10.0"
   },
   "optionalDependencies": {
-    "fsevents": "1.0.14",
-    "kerberos": "0.0.21"
+    "fsevents": "1.0.15"
   }
 }

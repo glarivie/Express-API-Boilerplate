@@ -4,14 +4,16 @@ import mongoose from 'mongoose';
 // Import models
 const Demo = mongoose.model('Demo');
 
-async function demo(req, res, next) {
+const demo = async (req, res) => {
   try {
     const params = req.params;
     const demo = await demoHelper.demo(Demo, params);
     return res.json(demo);
   } catch (error) {
-    return next(error);
+    throw new Error('Error on demo controller');
   }
-}
+};
 
-export { demo };
+export {
+  demo,
+};

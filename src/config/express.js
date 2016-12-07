@@ -26,9 +26,9 @@ app.disable('etag');
 app.use('/', router);
 
 // Error handler
-app.use((error, req, res, next) => {
-  if (res.headersSent) return next(error);
-  log(error, 'Handled error');
+app.use((error, req, res) => {
+  if (res.headersSent)
+    log(error, 'Handled error');
   return res.status(500).send(error.message);
 });
 
