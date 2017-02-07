@@ -3,10 +3,11 @@ import express from 'express';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
-import { log } from 'console';
+import { log, error } from 'console';
 import router from '../routes/main';
 
 const app = express();
+const { SERVER_PORT } = process.env;
 
 app.use(morgan('dev'));
 app.use(cookieParser());
@@ -26,12 +27,14 @@ app.disable('etag');
 app.use('/', router);
 
 // Error handler
-app.use((error, req, res) => {
-  if (res.headersSent)
-    log(error, 'Handled error');
-  return res.status(500).send(error.message);
+app.use((err, req, res, next) => {
+  if (res.headersSent) {
+    return next(err)
+  }
+  error(err, 'Handled error')
+  return res.status(500).send(error.message)
 });
 
-app.listen(process.env.SERVER_PORT, () => {
-  log(`[Express] Api is running on ${process.env.SERVER_PORT}`);
+app.listen(SERVER_PORT, () => {
+  log(`[Express] Api is running on ${SERVER_PORT}`);
 });
