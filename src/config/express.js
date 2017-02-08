@@ -11,7 +11,7 @@ const app = express();
 const { SERVER_PORT } = process.env;
 
 app
-  .use(morgan('dev'))
+  .use(morgan('dev')) // :method :url :status :response-time ms - :res[content-length]
   .use(cookieParser())
   .use(bodyParser.json()) // Parse application/json
   .use(bodyParser.urlencoded({ extended: true })) // Parse application/x-www-form-urlencoded
