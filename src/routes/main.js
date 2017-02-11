@@ -22,6 +22,6 @@ router.post(
       user,
     });
   },
-)
+);
 
 export default router;
