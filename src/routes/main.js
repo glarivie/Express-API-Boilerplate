@@ -1,15 +1,15 @@
-import express from 'express';
-import passport from 'passport';
+import express from 'express'
+import passport from 'passport'
 
-import * as demoController from '../controllers/demo';
+import * as demoController from '../controllers/demo'
 
-const router = express.Router();
+const router = express.Router()
 
 router.get('/', (req, res) => {
-  res.send('Api is working fine !');
-});
+  res.send('Api is working fine !')
+})
 
-router.get('/api/demo', demoController.demo);
+router.get('/api/demo', demoController.demo)
 
 router.post(
   '/login',
@@ -20,8 +20,8 @@ router.post(
       response: 'Authorization granted !',
       headers,
       user,
-    });
+    })
   },
-);
+)
 
-export default router;
+export default router

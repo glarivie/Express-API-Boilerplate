@@ -1,5 +1,5 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 
-const demoSchema = new mongoose.Schema({});
+const demoSchema = new mongoose.Schema({})
 
-export default demoSchema;
+export default demoSchema
