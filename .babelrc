@@ -1,5 +1,5 @@
 {
-	"presets": ["latest", "stage-3"],
+	"presets": ["backpack-core/babel", "latest", "stage-3"],
 	"plugins": [
     "transform-export-extensions",
     "transform-class-properties"
