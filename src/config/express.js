@@ -7,7 +7,7 @@ import bodyParser from 'body-parser'
 import passport from 'passport'
 import { log } from 'console'
 
-import { main } from '../routes'
+import { main, api } from '../routes'
 
 const { SERVER_PORT } = process.env
 
@@ -26,7 +26,9 @@ app
   .disable('x-powered-by') // Disable 'X-Powered-By' header in response
   .disable('etag') // Remove No Cache Control
 
-app.use('/', main) // Routes
+app
+  .use('/', main) // Main routes
+  .use('/api', api) // Api routes
 
 app.listen(SERVER_PORT, () =>
   log('[Express] Api is running on port', SERVER_PORT),
