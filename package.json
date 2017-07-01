@@ -10,9 +10,8 @@
   },
   "scripts": {
     "production": "NODE_ENV=production node ./build/index.js",
-    "build": "rm -rf build && mkdir build && babel -d ./build ./src -s",
+    "build": "NODE_ENV=production backpack build",
     "start": "NODE_ENV=development backpack",
-    "debug": "NODE_ENV=development nodemon --watch src --exec 'npm run lint && npm run build && node --inspect ./build/index.js'",
     "lint": "eslint -c .eslintrc src"
   },
   "repository": {
@@ -23,7 +22,7 @@
     "backpack-core",
     "express",
     "babel",
-    "es7"
+    "es8"
   ],
   "author": "Guillaume L. <glarivie@student.42.fr>",
   "license": "MIT",
@@ -32,38 +31,33 @@
   },
   "homepage": "https://github.com/hqro/Express-Backpack-Babel-ES7-Api-Boilerplate#readme",
   "dependencies": {
-    "babel-plugin-transform-class-properties": "^6.22.0",
-    "babel-plugin-transform-export-extensions": "^6.22.0",
     "body-parser": "^1.15.2",
     "cookie-parser": "^1.4.3",
     "cors": "^2.7.1",
     "dotenv": "^4.0.0",
     "express": "^4.14.0",
     "helmet": "^3.4.0",
-    "is_js": "^0.9.0",
-    "joi": "^10.6.0",
     "lodash": "^4.14.1",
     "mongoose": "^4.5.7",
     "mongoose-gen": "^2.1.1",
     "mongoose-paginate": "^5.0.0",
     "passport": "^0.3.2",
-    "passport-jwt": "^2.2.1",
-    "query-string": "^4.2.2"
+    "passport-jwt": "^2.2.1"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-core": "^6.11.4",
     "babel-eslint": "^7.2.3",
+    "babel-plugin-transform-class-properties": "^6.22.0",
+    "babel-plugin-transform-export-extensions": "^6.22.0",
     "babel-polyfill": "^6.22.0",
     "babel-preset-latest": "^6.22.0",
     "babel-preset-stage-3": "^6.22.0",
     "backpack-core": "^0.4.0-rc1",
-    "bunyan": "^1.8.1",
     "eslint": "^4.1.1",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-plugin-import": "^2.6.1",
-    "morgan": "^1.7.0",
-    "nodemon": "^1.10.0"
+    "morgan": "^1.7.0"
   },
   "optionalDependencies": {
     "fsevents": "^1.1.2"
