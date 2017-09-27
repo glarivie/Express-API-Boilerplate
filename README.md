@@ -1,22 +1,30 @@
 # Starting point for a new Node.js Restful Api
 
-### How to use ?
+## How to use ?
 
-##### Clone the project and install dependencies
+#### Clone the project and install dependencies
 
 ```
-git clone git@github.com:hqro/Express-Backpack-Babel-ES7-Api-Boilerplate.git App
-cd App
-yarn
+git clone git@github.com:hqro/Babel-Express-ES8-API-Boilerplate.git API
+cd API
+yarn install
 ```
 
-##### Development mode
+#### Development mode
 
 ```
 yarn start
 ```
 
-##### Production mode
+#### Tests mode
+
+```
+yarn test
+```
+
+Follow the `test/main.spec.js` guidelines to write your own tests.
+
+#### Production mode
 
 ```
 yarn build
