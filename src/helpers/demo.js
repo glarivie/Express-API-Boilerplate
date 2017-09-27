@@ -1,11 +1,11 @@
-// import _ from 'lodash'
+import mongoose from 'mongoose'
 
-const demo = async (Demo, params = {}) => {
+// Init models
+const Demo = mongoose.model('Demo')
+
+const demo = async (params = {}) => {
   try {
-    Demo.paginate({}, {
-      params,
-      sort: { data: params.date },
-    })
+    return Demo.find(params).exec()
   } catch (e) {
     throw new Error('Error on demo helper', e)
   }
