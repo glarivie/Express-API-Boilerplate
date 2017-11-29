@@ -8,7 +8,7 @@ import { log } from 'console'
 
 import { main, api } from '../routes'
 
-const { SERVER_PORT } = process.env
+const { SERVER_PORT, SERVER_HOST, NODE_ENV } = process.env
 
 const app = express()
 
@@ -25,11 +25,12 @@ app
   .disable('etag') // Remove No Cache Control
 
 app
-  .use('/', main) // Main routes
-  .use('/api', api) // Api routes
+  .use('/api', main) // Main routes
+  .use('/api/v1', api) // Api routes
 
-app.listen(SERVER_PORT, () =>
-  log('[Express] Api is running on port', SERVER_PORT),
-)
+app.listen(SERVER_PORT, SERVER_HOST, () => {
+  if (NODE_ENV !== 'test')
+    log('[Express] Api is running on port', SERVER_PORT)
+})
 
 export default app

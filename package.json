@@ -1,19 +1,19 @@
 {
   "name": "express-backpack-babel-starting-boilerplate",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "Starting point for a new Node.js Api",
   "main": "src/index.js",
   "private": false,
   "engines": {
-    "node": ">=6",
-    "npm": ">=3"
+    "node": ">=8",
+    "npm": ">=4"
   },
   "scripts": {
     "production": "NODE_ENV=production node ./build/index.js",
     "build": "backpack build",
-    "start": "SERVER_PORT=6789 backpack",
+    "start": "backpack",
     "lint": "eslint -c .eslintrc src",
-    "test": "NODE_ENV=test SERVER_PORT=6788 jest"
+    "test": "NODE_ENV=test SERVER_PORT=6788 jest --forceExit"
   },
   "repository": {
     "type": "git",

@@ -1,11 +1,12 @@
+import 'dotenv/config'
 import request from 'supertest'
 
 import '../src/config/mongo'
 import app from '../src/config/express'
 
-describe('GET /', () => {
-  test('HTTP status + Api is woriking fine !', async () => {
-    const { statusCode, text } = await request(app).get('/')
+describe('GET /api', () => {
+  test('HTTP status + Api is working fine !', async () => {
+    const { statusCode, text } = await request(app).get('/api')
 
     expect(statusCode).toBe(200)
     expect(text).toBe('Api is working fine !')
