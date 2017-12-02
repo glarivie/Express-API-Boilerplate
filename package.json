@@ -1,15 +1,15 @@
 {
   "name": "express-backpack-babel-starting-boilerplate",
-  "version": "2.1.0",
+  "version": "3.0.1",
   "description": "Starting point for a new Node.js Api",
-  "main": "src/index.js",
+  "main": "src/main.js",
   "private": false,
   "engines": {
     "node": ">=8",
     "npm": ">=4"
   },
   "scripts": {
-    "production": "NODE_ENV=production node ./build/index.js",
+    "production": "NODE_ENV=production node ./build/main.js",
     "build": "backpack build",
     "start": "backpack",
     "lint": "eslint -c .eslintrc src",
@@ -32,23 +32,21 @@
   },
   "homepage": "https://github.com/hqro/Express-Backpack-Babel-ES7-Api-Boilerplate#readme",
   "dependencies": {
-    "babel-preset-env": "^1.6.0",
     "body-parser": "^1.15.2",
     "cors": "^2.7.1",
     "dotenv": "^4.0.0",
     "express": "^4.14.0",
     "helmet": "^3.4.0",
+    "joi": "^13.0.2",
     "lodash": "^4.14.1",
     "mongoose": "^4.5.7",
     "passport": "^0.3.2",
     "passport-jwt": "^2.2.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.18.0",
     "babel-core": "^6.11.4",
     "babel-eslint": "^7.2.3",
     "babel-jest": "^21.2.0",
-    "babel-preset-stage-3": "^6.22.0",
     "backpack-core": "^0.4.0-rc1",
     "eslint": "^4.1.1",
     "eslint-config-airbnb-base": "^11.2.0",
