@@ -1,15 +1,9 @@
-import mongoose from 'mongoose'
+import _ from 'lodash'
 
-// Init models
-const Demo = mongoose.model('Demo')
-
-const demo = async (params = {}) => {
-  try {
-    return Demo.find(params).exec()
-  } catch (e) {
-    throw new Error('Error on demo helper', e)
-  }
-}
+const demo = test =>
+  new Promise((resolve, reject) =>
+    _.isUndefined(test) ? reject('[Error] Empty "test"') : resolve({ test }),
+  )
 
 export {
   demo,

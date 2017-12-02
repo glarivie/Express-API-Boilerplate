@@ -1,11 +1,19 @@
+import Joi from 'joi'
 import express from 'express'
 import passport from 'passport'
 
+import { validate } from '../middlewares'
 import * as demoController from '../controllers/demo'
 
 const router = express.Router()
 
-router.get('/demo', demoController.demo)
+const demoSchema = Joi.object().keys({
+  test: Joi.string().required(),
+})
+
+// {req.query}: "test"[String](required)
+router
+  .get('/demo', validate(demoSchema, 'query'), demoController.demo)
 
 router.post(
   '/login',
