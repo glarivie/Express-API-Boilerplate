@@ -3,9 +3,10 @@ import express from 'express'
 import passport from 'passport'
 
 import { validate } from '../middlewares'
-import * as demoController from '../controllers/demo'
+import { DemoController } from '../controllers/demo'
 
 const router = express.Router()
+const demoController = new DemoController()
 
 const demoSchema = Joi.object().keys({
   test: Joi.string().required(),

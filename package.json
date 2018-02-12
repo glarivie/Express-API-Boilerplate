@@ -1,6 +1,6 @@
 {
   "name": "express-backpack-babel-starting-boilerplate",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "description": "Starting point for a new Node.js Api",
   "main": "src/main.js",
   "private": false,
@@ -47,6 +47,8 @@
     "babel-core": "^6.11.4",
     "babel-eslint": "^7.2.3",
     "babel-jest": "^21.2.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
     "backpack-core": "^0.4.0-rc1",
     "eslint": "^4.1.1",
     "eslint-config-airbnb-base": "^11.2.0",
