@@ -1,5 +1,5 @@
 import 'dotenv/config'
 
-import './config/mongo'
+// import './config/mongo'
+// import './config/mysql'
 import './config/express'
-import './config/passport'

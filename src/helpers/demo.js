@@ -1,12 +1,7 @@
-import _ from 'lodash'
+// import _ from 'lodash'
 
-class DemoHelper {
-  demoFunction = test =>
-    new Promise((resolve, reject) =>
-      _.isUndefined(test) ? reject('[Error] Empty "test"') : resolve({ test }),
-    )
-}
+const demoFunction = test => new Promise(resolve => resolve({ test }))
 
 export {
-  DemoHelper,
+  demoFunction,
 }

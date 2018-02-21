@@ -1,25 +1,22 @@
 import { error } from 'console'
+import _ from 'lodash'
 
-import { DemoHelper } from '../helpers/demo'
+import * as demoHlpr from '../helpers/demo'
 
-class DemoController extends DemoHelper {
-  errorHandler = (res, err, message) => {
-    error(err)
-    return res.status(500).send(message)
-  }
-
-  demo = async (req, res) => {
-    try {
-      const { test } = req.query
-      const response = await this.demoFunction(test)
-
-      return res.status(200).json(response)
-    } catch (e) {
-      return this.errorHandler(res, e, 'Error on demo controller')
-    }
-  }
+const errorHandler = (res, e) => {
+  error(e)
+  return res.status(500).json(JSON.parse(_.get(e, 'message', {})))
 }
 
+const ctrlWrapper = callback => (req, res) =>
+  new Promise((resolve, reject) =>
+    callback(req)
+      .then(response => resolve(res.status(200).json(response)))
+      .catch(err => reject(errorHandler(res, err))),
+  )
+
+const demo = ctrlWrapper(({ query: { test } }) => demoHlpr.demoFunction(test))
+
 export {
-  DemoController,
+  demo,
 }
