@@ -6,6 +6,7 @@
   },
 
   "extends": "airbnb-base",
+  "plugins": ["flowtype"],
   "parser": "babel-eslint",
   "rules": {
     "import/prefer-default-export": 0,
@@ -22,6 +23,8 @@
     "no-await-in-loop": 0,
     "space-before-function-paren": 0,
     "class-methods-use-this": 0,
-    "no-underscore-dangle": 0
+    "no-underscore-dangle": 0,
+    "import/extensions": 0,
+    "import/no-unresolved": 0
   }
 }

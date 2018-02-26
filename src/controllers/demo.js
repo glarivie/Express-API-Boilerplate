@@ -1,10 +1,10 @@
 import { error } from 'console'
 import _ from 'lodash'
 
-import * as demoHlpr from '../helpers/demo'
+import * as demoHlpr from 'helpers/demo'
 
 const errorHandler = (res, e) => {
-  error(e)
+  error(e) // Display full error stack
   return res.status(500).json(JSON.parse(_.get(e, 'message', {})))
 }
 

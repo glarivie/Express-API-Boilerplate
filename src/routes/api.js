@@ -1,8 +1,8 @@
 import Joi from 'joi'
 import express from 'express'
 
-import { validate } from '../middlewares'
-import * as demoCtrl from '../controllers/demo'
+import { validate } from 'middlewares'
+import * as demoCtrl from 'controllers/demo'
 
 const router = express.Router()
 

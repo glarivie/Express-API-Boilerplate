@@ -3,13 +3,11 @@ import express from 'express'
 import morgan from 'morgan'
 import helmet from 'helmet'
 import bodyParser from 'body-parser'
-import passport from 'passport'
 import { log } from 'console'
 
-import { main, api } from '../routes'
+import { main, api } from 'routes'
 
-const { SERVER_PORT, SERVER_HOST, NODE_ENV } = process.env
-
+const { SERVER_PORT, NODE_ENV } = process.env
 const app = express()
 
 app
@@ -18,7 +16,6 @@ app
   .use(bodyParser.urlencoded({ extended: true })) // Parse application/x-www-form-urlencoded
   .use(cors()) // Enable Cross Origin Resource Sharing
   .use(helmet()) // Secure your app by setting various HTTP headers
-  .use(passport.initialize()) // initialize passport middleware
 
 app
   .disable('x-powered-by') // Disable 'X-Powered-By' header in response
@@ -28,7 +25,7 @@ app
   .use('/api', main) // Main routes
   .use('/api/v1', api) // Api routes
 
-app.listen(SERVER_PORT, SERVER_HOST, () => {
+app.listen(SERVER_PORT, () => {
   if (NODE_ENV !== 'test')
     log('[Express] Api is running on port', SERVER_PORT)
 })
