@@ -1,12 +1,12 @@
 {
-  "name": "express-backpack-babel-starting-boilerplate",
-  "version": "3.1.0",
+  "name": "node-api-boilerplate",
+  "version": "4.1.1",
   "description": "Starting point for a new Node.js Api",
   "main": "src/main.js",
   "private": false,
   "engines": {
-    "node": ">=8",
-    "npm": ">=4"
+    "node": ">=9",
+    "npm": ">=5"
   },
   "scripts": {
     "production": "NODE_ENV=production node ./build/main.js",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hqro/Express-Backpack-Babel-ES7-Api-Boilerplate"
+    "url": "git+https://github.com/hqro/Node-API-Boilterplate.git"
   },
   "keywords": [
     "backpack-core",
@@ -28,9 +28,9 @@
   "author": "Guillaume L. <glarivie@student.42.fr>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hqro/Express-Backpack-Babel-ES7-Api-Boilerplate/issues"
+    "url": "https://github.com/hqro/Node-API-Boilterplate.git/issues"
   },
-  "homepage": "https://github.com/hqro/Express-Backpack-Babel-ES7-Api-Boilerplate#readme",
+  "homepage": "https://github.com/hqro/Node-API-Boilterplate.git#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
     "cors": "^2.7.1",
