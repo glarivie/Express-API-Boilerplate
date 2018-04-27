@@ -5,17 +5,16 @@ import helmet from 'helmet'
 import bodyParser from 'body-parser'
 import { log } from 'console'
 
-import { is } from 'helpers'
-import { main, api } from 'routes'
+import { is } from '../helpers'
+import { main, api } from '../routes'
 
 const { SERVER_PORT } = process.env
 const app = express()
 
-if (!is.test) {
+if (!is.test)
   app
     .use(morgan('dev')) // :method :url :status :response-time ms - :res[content-length]
     .use(cors()) // Enable Cross Origin Resource Sharing
-}
 
 app
   .use(bodyParser.json()) // Parse application/json

@@ -1,29 +1,21 @@
-{
-  "env": {
-    "es6": true,
-    "node": true,
-    "jest": true
-  },
+env:
+  es6: true
+  node: true
+  jest: true
 
-  "extends": "airbnb-base",
-  "parser": "babel-eslint",
-  "rules": {
-    "import/prefer-default-export": 0,
-    "import/no-extraneous-dependencies": 0,
-    "new-cap": 0,
-    "semi": 0,
-    "curly": 0,
-    "max-len": 0,
-    "no-mixed-operators": 0,
-    "arrow-parens": 0,
-    "no-confusing-arrow": 0,
-    "global-require": 0,
-    "no-restricted-syntax": 0,
-    "no-await-in-loop": 0,
-    "space-before-function-paren": 0,
-    "class-methods-use-this": 0,
-    "no-underscore-dangle": 0,
-    "import/extensions": 0,
-    "import/no-unresolved": 0
-  }
-}
+extends: airbnb-base
+parser: babel-eslint
+rules:
+  semi: ["error", "never"]
+  new-cap: ["warn", { "newIsCap": true }]
+  curly: ["error", "multi"]
+  max-len: ["warn", { "code": 100, "tabWidth": 2 }]
+  arrow-parens: ["warn", "as-needed"]
+  no-confusing-arrow: "off"
+  global-require: "warn"
+  no-await-in-loop: "error"
+  space-before-function-paren: ["warn", "always"]
+  no-underscore-dangle: "off"
+  # no-restricted-syntax: "off"
+  import/prefer-default-export: "warn"
+  import/extensions: [".js", ".jsx"]

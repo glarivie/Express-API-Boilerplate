@@ -1,10 +1,10 @@
 import Joi from 'joi'
-import express from 'express'
+import { Router } from 'express'
 
-import { validate } from 'middlewares'
-import * as demoCtrl from 'controllers/demo'
+import { validate } from '../middlewares'
+import * as demoCtrl from '../controllers/demo'
 
-const router = express.Router()
+const router = new Router()
 
 const demoSchema = Joi.object().keys({
   test: Joi.string().required(),
