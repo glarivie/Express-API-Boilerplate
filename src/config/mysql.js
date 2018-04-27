@@ -25,8 +25,7 @@ const db = knex({
 
 // Run a dummy query to check database connection
 db.raw('select 1 + 1 as result').then(() => {
-  if (NODE_ENV !== 'test')
-    log(`[MariaDB] Database connected on port ${MYSQL_PORT}`)
+  if (NODE_ENV !== 'test') log(`[MariaDB] Database connected on port ${MYSQL_PORT}`)
 })
 
 export default db

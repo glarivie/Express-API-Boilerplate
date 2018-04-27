@@ -1,18 +1,21 @@
 {
-	"presets": ["backpack-core/babel", "env", "stage-3", "flow"],
-	"plugins": [
-		"transform-class-properties",
-		["module-resolver", {
-      "root": ["./src"],
-      "alias": {
-        "@": "./src",
-				"config": "./src/config",
-				"controllers": "./src/controllers",
-				"helpers": "./src/helpers",
-				"middlewares": "./src/middlewares",
-				"routes": "./src/routes",
-        "schemas": "./src/schemas"
+  "presets": ["backpack-core/babel", "env", "stage-3"],
+  "plugins": [
+    "transform-class-properties",
+    [
+      "module-resolver",
+      {
+        "root": ["./src"],
+        "alias": {
+          "@": "./src",
+          "config": "./src/config",
+          "controllers": "./src/controllers",
+          "helpers": "./src/helpers",
+          "middlewares": "./src/middlewares",
+          "routes": "./src/routes",
+          "schemas": "./src/schemas"
+        }
       }
-    }]
-	]
+    ]
+  ]
 }
