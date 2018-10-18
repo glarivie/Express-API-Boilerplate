@@ -6,7 +6,8 @@ import { log, error } from 'console'
 const { MONGODB_USER, MONGO_PORT, MONGODB_PASS, MONGO_HOST, MONGO_COLLECTION } = process.env
 
 const options = {
-  useMongoClient: true,
+  useCreateIndex: true,
+  useNewUrlParser: true,
   promiseLibrary: Promise,
 }
 

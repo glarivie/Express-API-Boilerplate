@@ -2,7 +2,7 @@
   "name": "node-api-boilerplate",
   "version": "5.0.1",
   "description": "Starting point for a new Node.js Api",
-  "main": "src/main.js",
+  "main": "src/index.js",
   "private": false,
   "engines": {
     "node": ">=9",
@@ -13,19 +13,28 @@
     "production": "NODE_ENV=production node ./build/main.js",
     "build": "backpack build",
     "start": "backpack",
+    "sucrase": "sucrase ./src -d ./dist --transforms imports",
     "docker": "docker-compose -f stack.yml up -d",
     "logs": "docker logs -f node_api_boilerplate",
     "lint": "eslint -c .eslintrc src",
     "test": "NODE_ENV=test DEBUG=0 jest --verbose --forceExit"
   },
   "lint-staged": {
-    "*.{js,json}": ["prettier --write", "git add"]
+    "*.{js,json}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hqro/Node-API-Boilterplate.git"
   },
-  "keywords": ["backpack-core", "express", "babel", "es8"],
+  "keywords": [
+    "backpack-core",
+    "express",
+    "babel",
+    "es8"
+  ],
   "author": "Guillaume L. <glarivie@student.42.fr>",
   "license": "MIT",
   "bugs": {
@@ -61,6 +70,7 @@
     "jest": "^21.2.0",
     "lint-staged": "^7.0.5",
     "prettier": "^1.12.1",
+    "sucrase": "^3.0.1",
     "supertest": "^3.0.0"
   },
   "optionalDependencies": {
